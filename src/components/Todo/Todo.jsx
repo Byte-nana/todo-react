@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { PiPencilSlashDuotone } from 'react-icons/pi';
 import { HiPencilAlt, HiTrash } from 'react-icons/hi';
-import { FaCheck, FaXmark } from 'react-icons/fa6';
+import TodoEdit from '../TodoEdit/TodoEdit';
 
-export default function Todo({ todo, onUpdate, onDelete }) {
+export default function Todo({ todo, onUpdate, onDelete, onEdit }) {
   const { id, text, status } = todo;
-  const [editMode, setEditMode] = useState(true);
+  const [editMode, setEditMode] = useState(false);
+
   const handleChange = (e) => {
     const status = e.target.checked ? 'completed' : 'active';
     onUpdate({ ...todo, status });
@@ -13,7 +13,11 @@ export default function Todo({ todo, onUpdate, onDelete }) {
   const handleClick = () => {
     onDelete(todo);
   };
-  const handleEdit = () => {};
+
+  const handleEditMode = () => {
+    setEditMode((mode) => !mode);
+  };
+
   return (
     <li>
       <input
@@ -26,20 +30,17 @@ export default function Todo({ todo, onUpdate, onDelete }) {
       <label htmlFor={id}>
         {!editMode && text}
         {editMode && (
-          <>
-            <input type='text' value={text} />
-            <button>
-              <FaCheck />
-            </button>
-            <button>
-              <FaXmark />
-            </button>
-          </>
+          <TodoEdit
+            todo={todo}
+            editMode={editMode}
+            setEditMode={setEditMode}
+            onEdit={onEdit}
+          />
         )}
       </label>
       {!editMode && (
         <>
-          <button onClick={handleEdit}>
+          <button onClick={handleEditMode}>
             <HiPencilAlt />
           </button>
           <button onClick={handleClick}>

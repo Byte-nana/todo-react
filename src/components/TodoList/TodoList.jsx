@@ -20,7 +20,11 @@ export default function TodoList() {
   const handleDelete = (deletedTodo) => {
     setTodos(todos.filter((todo) => todo.id !== deletedTodo.id));
   };
-
+  const handleEdit = (editedTodo) => {
+    setTodos(
+      todos.map((todo) => (todo.id === editedTodo.id ? editedTodo : todo))
+    );
+  };
   return (
     <section>
       <ul>
@@ -30,6 +34,7 @@ export default function TodoList() {
             todo={todo}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
+            onEdit={handleEdit}
           />
         ))}
       </ul>
