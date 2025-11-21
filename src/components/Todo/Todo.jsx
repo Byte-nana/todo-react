@@ -10,10 +10,7 @@ export default function Todo({ todo, onUpdate, onDelete, onEdit }) {
     const status = e.target.checked ? 'completed' : 'active';
     onUpdate({ ...todo, status });
   };
-  const handleClick = () => {
-    onDelete(todo);
-  };
-
+  const handleDelete = () => onDelete(todo);
   const handleEditMode = () => {
     setEditMode((mode) => !mode);
   };
@@ -27,23 +24,21 @@ export default function Todo({ todo, onUpdate, onDelete, onEdit }) {
         checked={status === 'completed'}
         onChange={handleChange}
       />
-      <label htmlFor={id}>
-        {!editMode && text}
-        {editMode && (
-          <TodoEdit
-            todo={todo}
-            editMode={editMode}
-            setEditMode={setEditMode}
-            onEdit={onEdit}
-          />
-        )}
-      </label>
+      <label htmlFor={id}>{!editMode && text}</label>
+      {editMode && (
+        <TodoEdit
+          todo={todo}
+          editMode={editMode}
+          setEditMode={setEditMode}
+          onEdit={onEdit}
+        />
+      )}
       {!editMode && (
         <>
           <button onClick={handleEditMode}>
             <HiPencilAlt />
           </button>
-          <button onClick={handleClick}>
+          <button onClick={handleDelete}>
             <HiTrash />
           </button>
         </>
