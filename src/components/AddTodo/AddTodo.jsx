@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { IoPawSharp } from 'react-icons/io5';
+import { HiPlus } from 'react-icons/hi';
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState('');
@@ -27,7 +27,7 @@ export default function AddTodo({ onAdd }) {
         onChange={handleChange}
       />
       <button type='submit'>
-        <IoPawSharp />
+        <HiPlus />
       </button>
     </form>
   );
