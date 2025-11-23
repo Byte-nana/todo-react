@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Todo.module.css';
 import { HiPencilAlt, HiTrash } from 'react-icons/hi';
 import TodoEdit from '../TodoEdit/TodoEdit';
 
@@ -16,15 +17,18 @@ export default function Todo({ todo, onUpdate, onDelete, onEdit }) {
   };
 
   return (
-    <li>
+    <li className={styles.todo}>
       <input
+        className={styles.checkbox}
         type='checkbox'
         name='checkbox'
         id={id}
         checked={status === 'completed'}
         onChange={handleChange}
       />
-      <label htmlFor={id}>{!editMode && text}</label>
+      <label className={styles.text} htmlFor={id}>
+        {!editMode && text}
+      </label>
       {editMode && (
         <TodoEdit
           todo={todo}
@@ -35,10 +39,10 @@ export default function Todo({ todo, onUpdate, onDelete, onEdit }) {
       )}
       {!editMode && (
         <>
-          <button onClick={handleEditMode}>
+          <button className={styles.editBtn} onClick={handleEditMode}>
             <HiPencilAlt />
           </button>
-          <button onClick={handleDelete}>
+          <button className={styles.deleteBtn} onClick={handleDelete}>
             <HiTrash />
           </button>
         </>

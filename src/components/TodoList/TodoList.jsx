@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './TodoList.module.css';
 import AddTodo from '../AddTodo/AddTodo';
 import Todo from '../Todo/Todo';
 
@@ -23,8 +24,8 @@ export default function TodoList({ filter }) {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
   return (
-    <section>
-      <ul>
+    <section className={styles.container}>
+      <ul className={styles.lists}>
         {filteredTodos.map((todo) => (
           <Todo
             key={todo.id}

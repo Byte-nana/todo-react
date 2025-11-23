@@ -1,0 +1,57 @@
+.editWrapper {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  min-width: 0;
+  flex: 1 1 auto;
+  padding-left: var(--space-xs);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  outline: none;
+  background-color: transparent;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.saveBtn,
+.cancelBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: var(--space-xs);
+  padding: 0.2rem var(--space-xs);
+  border: 2px solid transparent;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  border-radius: var(--space-xs);
+  transition: all 250ms ease-in-out;
+}
+
+.saveBtn {
+  background-color: var(--color-accent);
+}
+
+.cancelBtn {
+  background-color: var(--color-accent-secondary);
+}
+
+.saveBtn:hover,
+.cancelBtn:hover {
+  background-color: transparent;
+  transform: translateY(2px);
+}
+
+.saveBtn:hover {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.cancelBtn:hover {
+  border: 2px solid var(--color-accent-secondary);
+  color: var(--color-accent-secondary);
+}

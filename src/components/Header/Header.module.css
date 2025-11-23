@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-xs);
+  border: 2px solid var(--color-border);
+  border-radius: var(--space-sm);
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.themeBtn,
+.filterBtn {
+  font-size: 1.3rem;
+  transition: all 250ms ease-in-out;
+}
+.themeBtn:hover {
+  color: var(--color-accent);
+  transform: rotate(15deg) scale(1.2);
+}
+
+.filterBtn {
+  padding-block: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+.filterBtn:hover {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}

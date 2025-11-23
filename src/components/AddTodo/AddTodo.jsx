@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './AddTodo.module.css';
 import { v4 as uuidv4 } from 'uuid';
 import { HiPlus } from 'react-icons/hi';
 
@@ -17,8 +18,9 @@ export default function AddTodo({ onAdd }) {
     setText('');
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <input
+        className={styles.input}
         type='text'
         name='textInput'
         id='textInput'
@@ -26,9 +28,11 @@ export default function AddTodo({ onAdd }) {
         value={text}
         onChange={handleChange}
       />
-      <button type='submit'>
-        <HiPlus />
-      </button>
+      <span className={styles.buttonWrapper}>
+        <button className={styles.button} type='submit'>
+          <HiPlus />
+        </button>
+      </span>
     </form>
   );
 }

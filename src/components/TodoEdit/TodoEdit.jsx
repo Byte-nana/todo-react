@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import styles from './TodoEdit.module.css';
 import { FaCheck, FaXmark } from 'react-icons/fa6';
 
 export default function TodoEdit({ todo, editMode, setEditMode, onEdit }) {
@@ -23,19 +24,21 @@ export default function TodoEdit({ todo, editMode, setEditMode, onEdit }) {
   }, [editMode]);
 
   return (
-    <>
+    <div className={styles.editWrapper}>
       <input
+        className={styles.input}
         ref={editRef}
         type='text'
         value={editText}
         onChange={handleEditText}
       />
-      <button onClick={handleEditSave}>
+
+      <button className={styles.saveBtn} onClick={handleEditSave}>
         <FaCheck />
       </button>
-      <button onClick={handleEditCancel}>
+      <button className={styles.cancelBtn} onClick={handleEditCancel}>
         <FaXmark />
       </button>
-    </>
+    </div>
   );
 }
