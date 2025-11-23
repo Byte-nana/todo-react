@@ -7,6 +7,7 @@
 }
 
 .checkbox {
+  flex-shrink: 0;
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
@@ -21,15 +22,18 @@
 }
 
 .text {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   margin-left: var(--space-xs);
   color: var(--color-text);
   font-size: 1.3rem;
+  white-space: normal;
+  word-break: break-word;
   cursor: pointer;
 }
 
 .editBtn,
 .deleteBtn {
+  flex-shrink: 0;
   font-size: 1.2rem;
   transition: all 250ms ease-in-out;
 }
