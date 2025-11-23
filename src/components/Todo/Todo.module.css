@@ -36,6 +36,7 @@
 .editBtn:hover,
 .deleteBtn:hover {
   animation: wobble 300ms ease;
+  animation-iteration-count: infinite;
 }
 
 .editBtn:hover {
@@ -51,10 +52,10 @@
     transform: rotate(0);
   }
   33% {
-    transform: rotate(15deg) scale(1.2);
+    transform: rotate(15deg);
   }
   66% {
-    transform: rotate(-15deg) scale(1.2);
+    transform: rotate(-15deg);
   }
   100% {
     transform: rotate(0);

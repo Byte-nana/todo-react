@@ -11,12 +11,15 @@
   --color-deep-ocean: #2c365a;
   --color-blue: #3171c6;
   --color-black: #2d2d2d;
-
   --color-red: #aa081b;
 
   /* size */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

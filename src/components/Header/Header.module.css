@@ -2,31 +2,67 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-sm) var(--space-xs);
+  padding: var(--space-sm);
   border: 2px solid var(--color-border);
   border-radius: var(--space-sm);
 }
 
 .filters {
   display: flex;
+  align-items: center;
   gap: var(--space-xs);
 }
 
 .themeBtn,
 .filterBtn {
-  font-size: 1.3rem;
   transition: all 250ms ease-in-out;
 }
+
+.themeBtn {
+  font-size: 1.5rem;
+}
+
 .themeBtn:hover {
   color: var(--color-accent);
-  transform: rotate(15deg) scale(1.2);
+  animation: spin 3000ms ease;
+  animation-iteration-count: infinite;
 }
 
 .filterBtn {
-  padding-block: 0.2rem;
-  border-bottom: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .filterBtn:hover {
   color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
+}
+
+.filterBtn.selected {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
+
+.filterBtn.selected::after {
+  content: '';
+  display: block;
+  margin-top: 0.2rem;
+  border: 1px solid var(--color-accent);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0turn) scale(1);
+  }
+  25% {
+    transform: rotate(1turn) scale(1);
+  }
+  50% {
+    transform: rotate(1turn) scale(1.3);
+  }
+  75% {
+    transform: rotate(0turn) scale(1.3);
+  }
+  100% {
+    transform: rotate(0turn) scale(1);
+  }
 }

@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import { HiMoon, HiSun } from 'react-icons/hi';
 import { useDarkMode } from '../../context/DarkModeContext';
 
-export default function Header({ filters, onFilterChange }) {
+export default function Header({ filters, filter, onFilterChange }) {
   const { darkMode, toggleDarkMode } = useDarkMode();
   return (
     <header className={styles.header}>
@@ -14,7 +14,9 @@ export default function Header({ filters, onFilterChange }) {
         {filters.map((value, index) => (
           <li key={index}>
             <button
-              className={styles.filterBtn}
+              className={`${styles.filterBtn} ${
+                filter === value && styles.selected
+              }`}
               onClick={() => onFilterChange(value)}
             >
               {value}

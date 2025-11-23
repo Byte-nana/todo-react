@@ -13,7 +13,7 @@ function App() {
   }, [filter]);
   return (
     <DarkModeProvider>
-      <Header filters={filters} onFilterChange={setFilter} />
+      <Header filters={filters} filter={filter} onFilterChange={setFilter} />
       <TodoList filter={filter} />
     </DarkModeProvider>
   );
