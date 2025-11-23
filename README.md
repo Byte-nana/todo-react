@@ -20,8 +20,7 @@ A clean, minimalistic **React-based to-do list application** originally built in
 
 ## 🎮 Live Demo
 
-🔗 **Try the App:**  
-https://youcantodo.netlify.app/
+🔗 [**Try the App on Netlify**](https://youcantodo.netlify.app/)
 
 ---
 
@@ -93,3 +92,87 @@ These challenges helped me gain confidence in thinking like a React developer.
 ---
 
 ## 📁 Folder Structure
+
+```
+.
+├── public
+│ ├── favicon/
+│ └── og-image.png
+├── src
+│ ├── components
+│ │ ├── AddTodo/
+│ │ ├── Header/
+│ │ ├── Todo/
+│ │ ├── TodoEdit/
+│ │ └── TodoList/
+│ ├── context/
+│ │ └── DarkModeContext.jsx
+│ ├── App.jsx
+│ ├── App.css
+│ ├── index.css
+│ ├── main.jsx
+│ └── ...
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## 🧭 How It Works
+
+### 🔦 State Management
+
+- `App.jsx` manages the **filter** state
+- `TodoList` manages the **todos array**
+- Each `Todo` handles its own edit mode
+- `DarkModeContext` handles theme state globally
+
+### 🔁 Re-render Cycle
+
+React automatically updates:
+
+- the todo list when a task is added, edited, or deleted
+- the UI when the filter changes
+- the page theme when dark mode is toggled
+
+---
+
+## 🎞️ Preview GIF Template
+
+<div>
+    <a href="https://www.loom.com/share/e452adf1f3bd413eadc7e6d98e19c786">
+      <p>You can TO DO</p>
+    </a>
+    <a href="https://www.loom.com/share/e452adf1f3bd413eadc7e6d98e19c786">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e452adf1f3bd413eadc7e6d98e19c786-ad68820a0aa2ca33-full-play.gif#t=0.1">
+    </a>
+  </div>
+
+---
+
+## 🪄 UI Design
+
+|                  Light Mode                   |                  Dark Mode                  |
+| :-------------------------------------------: | :-----------------------------------------: |
+| ![Light mode](./public/screenshots/light.png) | ![Dark mode](./public/screenshots/dark.png) |
+
+---
+
+## 👩‍💻 About the Developer
+
+**Developed by [Byte-nana](https://github.com/byte-nana)**  
+Aspiring front-end developer passionate about building **playful, accessible, and visually polished web apps**.
+
+---
+
+## 🧾 Licence
+
+Released under the [MIT Licence](LICENSE).
+
+---
+
+<div align="center">
+  <sub>Made with 🐾 and curiosity in London • 2025</sub>
+</div>
