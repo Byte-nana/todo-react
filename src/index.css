@@ -4,22 +4,32 @@
   --color-accent-secondary: var(--color-red);
   --color-border: var(--color-deep-ocean);
   --color-text: var(--color-black);
+  --color-scrollbar: var(--color-beige);
 
   --color-white: #f2f2f2;
   --color-cream: #eee8df;
   --color-beige: #c4bcb0;
-  --color-deep-ocean: #2c365a;
   --color-blue: #3171c6;
+  --color-deep-ocean: #2c365a;
   --color-black: #2d2d2d;
+  --color-pink: #b2818d;
   --color-red: #aa081b;
 
   /* size */
+  --space-xxs: 0.2rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark {
+  --color-bg: var(--color-black);
+  --color-accent: var(--color-pink);
+  --color-border: var(--color-cream);
+  --color-text: var(--color-white);
 }
 
 body {
@@ -70,7 +80,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-beige);
+  background-color: var(--color-scrollbar);
 }
 
 ::-webkit-scrollbar-thumb:hover {
